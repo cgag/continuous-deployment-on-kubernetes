@@ -94,7 +94,7 @@ jenkins-builder-9zttr   0/1       Pending   0          23s
 jenkins-leader-to8xg    1/1       Running   0          4h 
 ```
 
-### Create a Nginx Replication Controller and Service
+### Create an Nginx Replication Controller and Service
 The Nginx reverse proxy will be deployed (like the Jenkins server) as a replication controller with a service. The service will have a public load balancer associated.
 
 The nginx Replication Controller is defined in `kubernetes/jenkins/proxy.yaml`. You'll use the Kubernetes `secrets` API to create an `htpasswd` file that lets nginx enforce basic authentication. You can also enable SSL or customize the default username or password. See [Enabling SSL or Basic Access Authentication](https://cloud.google.com/solutions/automated-build-images-with-jenkins-kubernetes#enabling_ssl_or_basic_access_authentication) for detailed instructions.
@@ -155,7 +155,7 @@ You've got a Kubernetes cluster managed by Google Container Engine. You've deplo
 You have the tools to build a continuous delivery pipeline. Now you need a sample app to deploy continuously.
 
 ## The sample app
-You'll use a very simple sample application - `gceme` - as the basis for your CD pipeline. `gceme` is written in Go and is located in the `sampleapp/gceme` directory in tihs repo. When you run the `gceme` binary on a GCE instance, it displays the instance's metadata in a pretty card:
+You'll use a very simple sample application - `gceme` - as the basis for your CD pipeline. `gceme` is written in Go and is located in the `sampleapp/gceme` directory in this repo. When you run the `gceme` binary on a GCE instance, it displays the instance's metadata in a pretty card:
 
 ![](img/info_card.png)
 
